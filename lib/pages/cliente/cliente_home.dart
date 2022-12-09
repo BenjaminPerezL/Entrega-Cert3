@@ -43,7 +43,14 @@ class _Cliente_HomeState extends State<Cliente_Home> {
                 Text(FirebaseAuth.instance.currentUser!.email!),
                 IconButton(
                     onPressed: () {
-                      AuthService().signOut(context);
+                      if (FirebaseAuth.instance.currentUser!.email! ==
+                          'benjamineperezlopez@gmail.com') {
+                        AuthService().signOutGoogle();
+                      } else {
+                        AuthService().signOut(
+                            context); //solo este funciona para log normal, y una vez google
+
+                      }
                       //logout(context);
                     },
                     icon: Icon(MdiIcons.exitRun)),

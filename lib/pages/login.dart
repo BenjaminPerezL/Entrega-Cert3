@@ -130,8 +130,9 @@ class _LoginState extends State<Login> {
                     ElevatedButton(
                       onPressed: () {
                         //AuthService().handleAuthState();
-                        AuthService().signOutGoogle();
+                        //AuthService().signOutGoogle();
                         AuthService().signInWithGoogle();
+                        setState(() {});
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.transparent),
